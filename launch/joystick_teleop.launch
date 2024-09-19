@@ -1,0 +1,12 @@
+<launch>
+    <rosparam file="$(find mobilebot)/config/joystick.yaml" command="load" />
+
+    <node pkg="joy" type="joy_node" name="joystick" >
+        <param name="autorepeat_rate" value="20" />
+        <param name="/dev" value="/dev/input/js2" />
+    </node>
+
+    <node pkg="joy_teleop" type="joy_teleop.py" name="joy_teleop">
+
+    </node>
+</launch>

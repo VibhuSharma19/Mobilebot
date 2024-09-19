@@ -1,0 +1,42 @@
+<launch>
+    <arg name="wheel_rad" default="0.033" />
+    <arg name="wheel_sep" default="0.17" />
+    <arg name="is_simple" default="true" />
+
+    
+
+    <rosparam file="$(find joint_state_controller)/joint_state_controller.yaml" command="load" />
+
+    <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher"
+      respawn="false" output="screen" />
+
+    
+    
+
+    <group if="$(arg is_simple)">
+      <rosparam file="$(find mobilebot)/config/simple_controller.yaml" command="load" />
+
+      <node pkg="controller_manager" type="spawner" name="controller_manager"
+      respawn="false" output="screen" args="wheel_left_controller wheel_right_controller joint_state_controller" />
+
+      <node pkg="mobilebot" type="simple_controller.py" name="simple_controller"
+          respawn="true" output="screen">
+          <param name="wheel_rad" value="$(arg wheel_rad)" />
+          <param name="wheel_sep" value="$(arg wheel_sep)" />
+      </node>
+    </group>
+
+    <group unless="$(arg is_simple)">
+      <rosparam file="$(find mobilebot)/config/diff_drive_controller.yaml" command="load" />
+
+      <node pkg="controller_manager" type="spawner" name="controller_manager"
+      respawn="false" output="screen" args=" mobilebot_controller joint_state_controller" />
+    </group>
+
+    <!-- <node pkg="mobilebot" type="noisy_controller.py" name="noisy_controller"
+          respawn="true" output="screen">
+          <param name="wheel_rad" value="0.038" />
+          <param name="wheel_sep" value="0.19" />
+    </node> -->
+
+</launch>

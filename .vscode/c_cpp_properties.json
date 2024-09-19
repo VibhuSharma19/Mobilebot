@@ -1,0 +1,30 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "${default}",
+        "limitSymbolsToIncludedHeaders": false
+      },
+      "includePath": [
+        "/home/vros/catkin_ws/devel/include/**",
+        "/opt/ros/noetic/include/**",
+        "/home/vros/catkin_ws/src/mobilebot/include/**",
+        "/home/vros/catkin_ws/src/robotic_sim/include/**",
+        "/home/vros/catkin_ws/src/robotics_project/include/**",
+        "/home/vros/catkin_ws/src/ros_app/include/**",
+        "/home/vros/catkin_ws/src/ros_basics_udemy/include/**",
+        "/home/vros/catkin_ws/src/ros_essentials_cpp/include/**",
+        "/home/vros/catkin_ws/src/turtlebot3_simulations/turtlebot3_fake/include/**",
+        "/home/vros/catkin_ws/src/turtlebot3_simulations/turtlebot3_gazebo/include/**",
+        "/home/vros/catkin_ws/src/turtlebot3/turtlebot3_slam/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS",
+      "intelliSenseMode": "gcc-x64",
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "gnu11",
+      "cppStandard": "c++14"
+    }
+  ],
+  "version": 4
+}

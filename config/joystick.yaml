@@ -1,0 +1,15 @@
+teleop:
+  move:
+    type: topic
+    message_type: geometry_msgs/Twist
+    topic_name: mobilebot_controller/cmd_vel
+    axis_mappings:
+      - 
+        axis: 0
+        target: linear.x
+        scale: 1
+      -
+        axis: 3
+        target: angular.z
+        scale: 1
+
