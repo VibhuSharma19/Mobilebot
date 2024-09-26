@@ -14,7 +14,7 @@
     </include>
 
     <node pkg="gazebo_ros" type="spawn_model" name="spawn_model"
-           args="-urdf -model mobilebot -x 0.0 -y 0.0 -z 0.0 -param robot_description"
+           args="-urdf -model mobilebot -x 0.0 -y 0.0 -z 0.02 -param robot_description"
            output="screen" respawn="false" />
 
     <node pkg="joint_state_publisher" type="joint_state_publisher" name="joint_state_publisher" />

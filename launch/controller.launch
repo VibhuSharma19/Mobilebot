@@ -3,15 +3,12 @@
     <arg name="wheel_sep" default="0.17" />
     <arg name="is_simple" default="true" />
 
+    <rosparam command="load" file="$(find mobilebot)/config/gazebo_ros_control.yaml"/>
     
 
     <rosparam file="$(find joint_state_controller)/joint_state_controller.yaml" command="load" />
 
-    <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher"
-      respawn="false" output="screen" />
-
-    
-    
+    <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher" respawn="false" output="screen" />
 
     <group if="$(arg is_simple)">
       <rosparam file="$(find mobilebot)/config/simple_controller.yaml" command="load" />

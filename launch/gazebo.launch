@@ -16,5 +16,9 @@
     <node pkg="gazebo_ros" type="spawn_model" name="spawn_model"
            args="-unpause -urdf -model robot -param robot_description"
            output="screen" respawn="false" />
+
+    <include file="$(find mobilebot)/launch/controller.launch">
+     <arg name="is_simple" value="false"/>        
+    </include>
    
 </launch>
