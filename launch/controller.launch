@@ -3,7 +3,7 @@
     <arg name="wheel_sep" default="0.17" />
     <arg name="is_simple" default="true" />
 
-    <rosparam command="load" file="$(find mobilebot)/config/gazebo_ros_control.yaml"/>
+    <!-- <rosparam command="load" file="$(find mobilebot)/config/gazebo_ros_control.yaml"/> -->
     
 
     <rosparam file="$(find joint_state_controller)/joint_state_controller.yaml" command="load" />

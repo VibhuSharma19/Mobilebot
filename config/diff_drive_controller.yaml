@@ -8,7 +8,7 @@ mobilebot_controller:
 
   wheel_separation: 0.17
   wheel_radius: 0.033
-  cmd_vel_timeout: 0.25
+  cmd_vel_timeout: 0.5
   base_frame_id: base_footprint
   prserve_turning_radius: true
   publish_smd: false
